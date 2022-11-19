@@ -15,11 +15,11 @@ a:visited {
 
 div.breadcrumbs {
     background: #30caa0;
-    color: #10284e;
+    color: orangered;
 }
 
 div.breadcrumbs a {
-    color: #fff;
+    color: black;
 }
 
 .module h2, .module caption, .inline-group h2 {

@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% block title %} | Register Account {% endblock %}
+
 {% block content %}
 
 
@@ -13,11 +15,22 @@
                 <i class="fas fa-user-plus"></i> Register</h4>
               </div>
               <div class="card-body">
-                <form action="index.html">
+                <!-- Alerts -->
+                {% include 'partials/_alerts.html' %}
+                <form action="{% url 'register' %}" method="POST">
+                  {% csrf_token %}
                   <div class="form-group">
-                    <lable for="username">Username</label>
-                    <input type="text" name="username" class="form-control" required>
+                    <lable for="firstname">Firstname</label>
+                    <input type="text" name="firstname" class="form-control" required>
                     </div>
+                    <div class="form-group">
+                      <lable for="lastname">Lastname</label>
+                      <input type="text" name="lastname" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                      <lable for="username">Username</label>
+                      <input type="text" name="username" class="form-control" required>
+                    </div>  
                     <div class="form-group">
                       <label for="email">Email</label>
                       <input type="email" name="email" class="form-control" required>
@@ -28,7 +41,7 @@
                     </div>
                     <div class="form-group">
                       <label for="password">Confirm Password</label>
-                      <input type="password" name="password" class="form-control" required>
+                      <input type="password" name="password2" class="form-control" required>
                     </div>
                     <input type="submit" value="Register" class="btn btn-secondary btn-block">
                   </form>
