@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 import os
 from pathlib import Path
 
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -158,3 +160,12 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER='gayatri.kolekar@gmail.com'
 EMAIL_HOST_PASSWORD='uwcgbzseqksuinwk'
 EMAIL_USE_TLS=True
+
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+
+
+
