@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
 from .models import Contact
+#from asyncio.windows_events import NULL
 
 def contact(request):
   if request.method == 'POST':
